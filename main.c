@@ -6,43 +6,43 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "pit.h"
 
 
+void PIT_IRQHandler(void);
+
+char input = ' ';
 
 
+void PIT_IRQHandler()
+{
 
-
-void delay_ms( int n) {
-volatile int i;
-volatile int j;
-for( i = 0 ; i < n; i++)
-for(j = 0; j < 3500; j++) {}
+	input = keyPressed();
+  PIT->CHANNEL[0].TFLG = PIT_TFLG_TIF_MASK;
 }
 
 
 int main()
 {
-	char xd[1];
-	char display[]={0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20};
-	
 
+
+	PIT_Init();
 	LCD1602_Init();		 /* initialize LCD		  */
-	LCD1602_Backlight(TRUE);
-
-	LCD1602_SetCursor(0,0);
-
-
-
 	keyPadInit();
 	
 	
+	LCD1602_Backlight(TRUE);
+	LCD1602_ClearAll();
+
+
+	char y[16];
+
   while(1)
 	{
-		delay_ms(10);
-		xd[0] = keyPressed();
+		DELAY(5)
+		sprintf(y, "%c", input);
 		LCD1602_SetCursor(0,0);
-		LCD1602_Print(xd);
-	
+		LCD1602_Print(y);
 	}
 }
 	
