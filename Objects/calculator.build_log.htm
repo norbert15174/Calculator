@@ -1,0 +1,127 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.32.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Norbert Norbert, AGH, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.32.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.14.1
+Assembler:       Armasm.exe V6.14.1
+Linker/Locator:  ArmLink.exe V6.14.1
+Library Manager: ArmAr.exe V6.14.1
+Hex Converter:   FromElf.exe V6.14.1
+CPU DLL:         SARMCM3.DLL V5.32.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.4.0
+Target DLL:      Segger\JL2CM3.dll V2.99.38.0
+Dialog DLL:      TARMCM1.DLL V1.14.3.0
+ 
+<h2>Project:</h2>
+C:\Users\Norbert\Desktop\Calculator\calculator.uvprojx
+Project File Date:  12/23/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.14.1', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+main.c(3): warning: In file included from...
+./keypad.h(12): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+main.c(15): warning: no previous prototype for function 'delay_ms' [-Wmissing-prototypes]
+void delay_ms( int n) {
+     ^
+main.c(15): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void delay_ms( int n) {
+^
+static 
+main.c(26): warning: unused variable 'display' [-Wunused-variable]
+        char display[]={0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20};
+             ^
+3 warnings generated.
+compiling main.c...
+keypad.c(3): warning: In file included from...
+./keypad.h(12): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+keypad.c(7): warning: no previous extern declaration for non-static variable 'butt' [-Wmissing-variable-declarations]
+char butt[4][4] ={
+     ^
+keypad.c(7): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char butt[4][4] ={
+^
+keypad.c(14): warning: no previous extern declaration for non-static variable 'cLine' [-Wmissing-variable-declarations]
+int cLine = 0;
+    ^
+keypad.c(14): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int cLine = 0;
+^
+keypad.c(15): warning: no previous extern declaration for non-static variable 'rLine' [-Wmissing-variable-declarations]
+int rLine = 0;
+    ^
+keypad.c(15): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int rLine = 0;
+^
+keypad.c(49): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        PTA->PDDR &= ~(1<<(R1));
+                  ~~ ^~~~~~~~~~
+keypad.c(50): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        PTA->PDDR &= ~(1<<(R2));
+                  ~~ ^~~~~~~~~~
+keypad.c(51): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        PTA->PDDR &= ~(1<<(R3));
+                  ~~ ^~~~~~~~~~
+keypad.c(52): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        PTA->PDDR &= ~(1<<(R4));
+                  ~~ ^~~~~~~~~~
+keypad.c(64): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        PTA->PDDR &= ~(1<<(C1));
+                  ~~ ^~~~~~~~~~
+keypad.c(65): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        PTA->PDDR &= ~(1<<(C2));
+                  ~~ ^~~~~~~~~~
+keypad.c(66): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        PTA->PDDR &= ~(1<<(C3));
+                  ~~ ^~~~~~~~~~
+keypad.c(67): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        PTA->PDDR &= ~(1<<(C4));
+                  ~~ ^~~~~~~~~~
+12 warnings generated.
+compiling keypad.c...
+linking...
+Program Size: Code=1512 RO-data=224 RW-data=20 ZI-data=368  
+".\Objects\calculator.axf" - 0 Error(s), 15 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.Kinetis_KLxx_DFP.1.15.0.pack
+                Keil.Kinetis_KLxx_DFP.1.15.0
+                NXP Kinetis KLxx Series Device Support and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Users\Norbert\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\Norbert\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\ARM\startup_MKL05Z4.s
+      Source file:   Device\Source\system_MKL05Z4.c
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
