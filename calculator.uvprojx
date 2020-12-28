@@ -433,6 +433,16 @@
               <FileType>5</FileType>
               <FilePath>.\pit.h</FilePath>
             </File>
+            <File>
+              <FileName>calc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\calc.c</FilePath>
+            </File>
+            <File>
+              <FileName>calc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\calc.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
