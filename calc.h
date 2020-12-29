@@ -6,6 +6,6 @@
 #include <stdlib.h>
 
 
-int64_t CalcResult(int64_t r1, int64_t r2, char operation);
+double CalcResult(double r1, double r2, char operation);
 
 #endif

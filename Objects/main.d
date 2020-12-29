@@ -11,4 +11,4 @@
   keypad.h frdm_bsp.h lcd1602.h i2c.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h pit.h
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h pit.h calc.h

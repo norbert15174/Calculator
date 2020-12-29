@@ -31,50 +31,53 @@ main.c(3): warning: In file included from...
 ./keypad.h(12): warning: no newline at end of file [-Wnewline-eof]
 #endif
       ^
-main.c(14): warning: no previous extern declaration for non-static variable 'input' [-Wmissing-variable-declarations]
+main.c(15): warning: no previous extern declaration for non-static variable 'input' [-Wmissing-variable-declarations]
 char input = ' ';
      ^
-main.c(14): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+main.c(15): note: declare 'static' if the variable is not intended to be used outside of this translation unit
 char input = ' ';
 ^
-main.c(15): warning: no previous extern declaration for non-static variable 'i' [-Wmissing-variable-declarations]
+main.c(16): warning: no previous extern declaration for non-static variable 'i' [-Wmissing-variable-declarations]
 int i = -1;
-    ^
-main.c(15): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-int i = -1;
-^
-main.c(16): warning: no previous extern declaration for non-static variable 'changeValue' [-Wmissing-variable-declarations]
-int changeValue = 0;
     ^
 main.c(16): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int i = -1;
+^
+main.c(17): warning: no previous extern declaration for non-static variable 'changeValue' [-Wmissing-variable-declarations]
+int changeValue = 0;
+    ^
+main.c(17): note: declare 'static' if the variable is not intended to be used outside of this translation unit
 int changeValue = 0;
 ^
-main.c(17): warning: no previous extern declaration for non-static variable 'currentValue' [-Wmissing-variable-declarations]
-int64_t currentValue = 0;
-        ^
-main.c(17): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-int64_t currentValue = 0;
-^
-main.c(18): warning: no previous extern declaration for non-static variable 'savedValue' [-Wmissing-variable-declarations]
-int64_t savedValue = 0;
-        ^
+main.c(18): warning: no previous extern declaration for non-static variable 'currentValue' [-Wmissing-variable-declarations]
+double currentValue = 0;
+       ^
 main.c(18): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-int64_t savedValue = 0;
+double currentValue = 0;
 ^
-main.c(19): warning: no previous extern declaration for non-static variable 'a' [-Wmissing-variable-declarations]
-float a = 255.0/6;
-      ^
+main.c(19): warning: no previous extern declaration for non-static variable 'savedValue' [-Wmissing-variable-declarations]
+double savedValue = 20;
+       ^
 main.c(19): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-float a = 255.0/6;
+double savedValue = 20;
 ^
-main.c(49): warning: unused variable 'operation' [-Wunused-variable]
-        char operation;
-             ^
-8 warnings generated.
+main.c(106): warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+                                        if(currentValue == (int64_t)currentValue)
+                                           ~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~
+main.c(106): warning: implicit conversion from 'int64_t' (aka 'long long') to 'double' may lose precision [-Wimplicit-int-float-conversion]
+                                        if(currentValue == (int64_t)currentValue)
+                                                        ~~ ^~~~~~~~~~~~~~~~~~~~~
+main.c(20): warning: no previous extern declaration for non-static variable 'result' [-Wmissing-variable-declarations]
+char result[16];
+     ^
+main.c(20): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char result[16];
+^
+9 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=3748 RO-data=516 RW-data=28 ZI-data=888  
-".\Objects\calculator.axf" - 0 Error(s), 8 Warning(s).
+Program Size: Code=14124 RO-data=860 RW-data=40 ZI-data=904  
+".\Objects\calculator.axf" - 0 Error(s), 9 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -100,9 +103,9 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.4.0
 
    * Component: Keil::Device:Startup:1.0.0
-      Source file:   Device\Source\system_MKL05Z4.c
       Source file:   Device\Source\ARM\startup_MKL05Z4.s
-Build Time Elapsed:  00:00:01
+      Source file:   Device\Source\system_MKL05Z4.c
+Build Time Elapsed:  00:00:00
 </pre>
 </body>
 </html>

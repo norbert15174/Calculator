@@ -7,6 +7,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "pit.h"
+#include "calc.h"
 
 
 void PIT_IRQHandler(void);
@@ -14,8 +15,9 @@ void PIT_IRQHandler(void);
 char input = ' ';
 int i = -1;
 int changeValue = 0;
-int64_t currentValue = 0;
-int64_t savedValue = 0;
+double currentValue = 0;
+double savedValue = 20;
+char result[16];
 
 void PIT_IRQHandler()
 {
@@ -44,8 +46,7 @@ int main()
 
 
 	char display[20] = {0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20};
-	char result[16];
-	char operation;
+	char operation = 'A';
 
 	LCD1602_SetCursor(0,0);
 	sprintf(display,"0");
@@ -58,49 +59,65 @@ int main()
 		if(changeValue){
 			switch(input){
 				case '=':
-					changeValue = 0;
-				sprintf(display,"%c",input);
-				LCD1602_ClearAll();
-				i=0;
+					if(operation == 'A'){
+						operation = input;
+						savedValue = currentValue;
+						sprintf(display,"%c",input);
+						LCD1602_ClearAll();
+						i=0;
+						sprintf(result,"%s","                ");
+					}
 					break;
 				case '+':
-					changeValue = 0;
-				sprintf(display,"%c",input);
-				i=0;
-				LCD1602_ClearAll();
+					if(operation == 'A'){
+					savedValue = currentValue;
+					operation = '+';
+					sprintf(display,"%c",input);
+					i=0;
+					LCD1602_ClearAll();
+					sprintf(result,"%s","                ");
+					}else{
+						LCD1602_ClearAll();
+						sprintf(display,"%f",CalcResult(savedValue,currentValue,operation));
+					}
 					break;
 				case '-':
-					changeValue = 0;
-				sprintf(display,"%c",input);
-				i=0;
-				LCD1602_ClearAll();
+					sprintf(display,"%c",input);
+					i=0;
+					LCD1602_ClearAll();
+					sprintf(result,"%s","                ");
 					break;
 				case '/':
-					changeValue = 0;
-				sprintf(display,"%c",input);
-				i=0;
-				LCD1602_ClearAll();
+					sprintf(display,"%c",input);
+					i=0;
+					LCD1602_ClearAll();
+					sprintf(result,"%s","                ");
 					break;
 				case 'C':
-					changeValue = 0;
-				sprintf(display,"%c",input);
-				i=0;
-				LCD1602_ClearAll();
+					sprintf(display,"%c",input);
+					i=0;
+					LCD1602_ClearAll();
+					sprintf(result,"%s","                ");
 					break;
 				default:
 					result[i] = input;
-					changeValue = 0;
-					currentValue = atoll(result);
-					sprintf(display,"%llu",currentValue);
+					currentValue = atof(result);
+					if(currentValue == (int64_t)currentValue)
+						sprintf(display,"%llu",(int64_t)currentValue);
+					else
+						sprintf(display,"%f",currentValue);
 
 				break;
 			}
+			changeValue = 0;
+			LCD1602_SetCursor(0,0);
+			LCD1602_Print(display);
 		}
-					LCD1602_SetCursor(0,0);
-					LCD1602_Print(display);
+					
 	}
 }
-	
+
+
 	
 	
 	
