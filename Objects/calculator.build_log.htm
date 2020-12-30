@@ -56,28 +56,58 @@ main.c(18): note: declare 'static' if the variable is not intended to be used ou
 double currentValue = 0;
 ^
 main.c(19): warning: no previous extern declaration for non-static variable 'savedValue' [-Wmissing-variable-declarations]
-double savedValue = 20;
+double savedValue = 0;
        ^
 main.c(19): note: declare 'static' if the variable is not intended to be used outside of this translation unit
-double savedValue = 20;
+double savedValue = 0;
 ^
-main.c(106): warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
-                                        if(currentValue == (int64_t)currentValue)
-                                           ~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~
-main.c(106): warning: implicit conversion from 'int64_t' (aka 'long long') to 'double' may lose precision [-Wimplicit-int-float-conversion]
-                                        if(currentValue == (int64_t)currentValue)
-                                                        ~~ ^~~~~~~~~~~~~~~~~~~~~
+main.c(21): warning: no previous extern declaration for non-static variable 'clear' [-Wmissing-variable-declarations]
+int clear = 0;
+    ^
+main.c(21): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int clear = 0;
+^
+main.c(22): warning: no previous extern declaration for non-static variable 'display' [-Wmissing-variable-declarations]
+char display[20] = {0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20};
+     ^
+main.c(22): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char display[20] = {0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20};
+^
+main.c(23): warning: no previous extern declaration for non-static variable 'operation' [-Wmissing-variable-declarations]
+char operation = 'A';
+     ^
+main.c(23): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char operation = 'A';
+^
+main.c(42): warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+                                        if( currentValue >= 0 && currentValue == (int64_t)currentValue )
+                                                                 ~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~
+main.c(42): warning: implicit conversion from 'int64_t' (aka 'long long') to 'double' may lose precision [-Wimplicit-int-float-conversion]
+                                        if( currentValue >= 0 && currentValue == (int64_t)currentValue )
+                                                                              ~~ ^~~~~~~~~~~~~~~~~~~~~
+main.c(87): warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+                                        if(currentValue >= 0 && currentValue == (int64_t)currentValue)
+                                                                ~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~
+main.c(87): warning: implicit conversion from 'int64_t' (aka 'long long') to 'double' may lose precision [-Wimplicit-int-float-conversion]
+                                        if(currentValue >= 0 && currentValue == (int64_t)currentValue)
+                                                                             ~~ ^~~~~~~~~~~~~~~~~~~~~
 main.c(20): warning: no previous extern declaration for non-static variable 'result' [-Wmissing-variable-declarations]
 char result[16];
      ^
 main.c(20): note: declare 'static' if the variable is not intended to be used outside of this translation unit
 char result[16];
 ^
-9 warnings generated.
+main.c(27): warning: no previous extern declaration for non-static variable 'operationValue' [-Wmissing-variable-declarations]
+char operationValue[2];
+     ^
+main.c(27): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+char operationValue[2];
+^
+15 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=14124 RO-data=860 RW-data=40 ZI-data=904  
-".\Objects\calculator.axf" - 0 Error(s), 9 Warning(s).
+Program Size: Code=14532 RO-data=844 RW-data=48 ZI-data=920  
+".\Objects\calculator.axf" - 0 Error(s), 15 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -103,9 +133,9 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.4.0
 
    * Component: Keil::Device:Startup:1.0.0
-      Source file:   Device\Source\ARM\startup_MKL05Z4.s
       Source file:   Device\Source\system_MKL05Z4.c
-Build Time Elapsed:  00:00:00
+      Source file:   Device\Source\ARM\startup_MKL05Z4.s
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
