@@ -19,6 +19,7 @@ double CalcResult(double r1, double r2, char operation){
 			r1 = r1+r2;
 			break;
 		case '/':
+			if(r2 == 0) return 0;
 			r1 = r1/r2;
 			break;
 		default:

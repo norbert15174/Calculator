@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\calculator.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\calculator.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6140101: Last Updated: Wed Dec 30 16:51:55 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6140101: Last Updated: Fri Jan 15 09:07:57 2021
 <BR><P>
 <H3>Maximum Stack Usage =        376 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -110,13 +110,13 @@ Global Symbols
 
 <P><STRONG><a name="[be]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
 
-<P><STRONG><a name="[53]"></a>_printf_percent</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
+<P><STRONG><a name="[54]"></a>_printf_percent</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
 </UL>
 
 <P><STRONG><a name="[38]"></a>_printf_f</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_f.o(.ARM.Collect$$_printf_percent$$00000003))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72 + Unknown Stack Size
-<LI>Call Chain = _printf_f &rArr; _printf_ll &rArr; _printf_llu &rArr; _printf_longlong_dec &rArr; _printf_int_common
+<LI>Call Chain = _printf_f &rArr; _printf_ll &rArr; _printf_lld &rArr; _printf_llu &rArr; _printf_longlong_dec &rArr; _printf_int_common
 </UL>
 <BR>[Calls]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_ll
 <LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec
@@ -124,37 +124,47 @@ Global Symbols
 
 <P><STRONG><a name="[39]"></a>_printf_ll</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_ll.o(.ARM.Collect$$_printf_percent$$00000007))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72 + Unknown Stack Size
-<LI>Call Chain = _printf_ll &rArr; _printf_llu &rArr; _printf_longlong_dec &rArr; _printf_int_common
+<LI>Call Chain = _printf_ll &rArr; _printf_lld &rArr; _printf_llu &rArr; _printf_longlong_dec &rArr; _printf_int_common
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_llu
+<BR>[Calls]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_lld
 </UL>
 <BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_f
 </UL>
 
-<P><STRONG><a name="[3b]"></a>_printf_llu</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_llu.o(.ARM.Collect$$_printf_percent$$0000000F))
+<P><STRONG><a name="[3b]"></a>_printf_lld</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_lld.o(.ARM.Collect$$_printf_percent$$0000000E))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72 + Unknown Stack Size
-<LI>Call Chain = _printf_llu &rArr; _printf_longlong_dec &rArr; _printf_int_common
+<LI>Call Chain = _printf_lld &rArr; _printf_llu &rArr; _printf_longlong_dec &rArr; _printf_int_common
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_percent_end
+<BR>[Calls]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_llu
 <LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_longlong_dec
 </UL>
 <BR>[Called By]<UL><LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_ll
 </UL>
 
-<P><STRONG><a name="[3c]"></a>_printf_percent_end</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_percent_end.o(.ARM.Collect$$_printf_percent$$00000017))
-<BR><BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_llu
+<P><STRONG><a name="[3c]"></a>_printf_llu</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_llu.o(.ARM.Collect$$_printf_percent$$0000000F))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72 + Unknown Stack Size
+<LI>Call Chain = _printf_llu &rArr; _printf_longlong_dec &rArr; _printf_int_common
+</UL>
+<BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_percent_end
+<LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_longlong_dec
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_lld
 </UL>
 
-<P><STRONG><a name="[46]"></a>__rt_lib_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit.o(.ARM.Collect$$libinit$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_li
+<P><STRONG><a name="[3e]"></a>_printf_percent_end</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_percent_end.o(.ARM.Collect$$_printf_percent$$00000017))
+<BR><BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_llu
+</UL>
+
+<P><STRONG><a name="[47]"></a>__rt_lib_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit.o(.ARM.Collect$$libinit$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_li
 </UL>
 
 <P><STRONG><a name="[bf]"></a>__rt_lib_init_fp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000002))
 
 <P><STRONG><a name="[c0]"></a>__rt_lib_init_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000A))
 
-<P><STRONG><a name="[3e]"></a>__rt_lib_init_lc_common</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000F))
-<BR><BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_locale
+<P><STRONG><a name="[3f]"></a>__rt_lib_init_lc_common</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000F))
+<BR><BR>[Calls]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_locale
 </UL>
 
 <P><STRONG><a name="[c1]"></a>__rt_lib_init_preinit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000004))
@@ -165,7 +175,7 @@ Global Symbols
 
 <P><STRONG><a name="[c4]"></a>__rt_lib_init_lc_collate_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000011))
 
-<P><STRONG><a name="[40]"></a>__rt_lib_init_lc_ctype_2</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000012))
+<P><STRONG><a name="[41]"></a>__rt_lib_init_lc_ctype_2</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000012))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24 + Unknown Stack Size
 <LI>Call Chain = __rt_lib_init_lc_ctype_2 &rArr; _get_lc_ctype &rArr; strcmp
 </UL>
@@ -176,11 +186,11 @@ Global Symbols
 
 <P><STRONG><a name="[c6]"></a>__rt_lib_init_lc_monetary_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000015))
 
-<P><STRONG><a name="[41]"></a>__rt_lib_init_lc_numeric_2</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000016))
+<P><STRONG><a name="[42]"></a>__rt_lib_init_lc_numeric_2</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000016))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24 + Unknown Stack Size
 <LI>Call Chain = __rt_lib_init_lc_numeric_2 &rArr; _get_lc_numeric &rArr; strcmp
 </UL>
-<BR>[Calls]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_get_lc_numeric
+<BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_get_lc_numeric
 </UL>
 
 <P><STRONG><a name="[c7]"></a>__rt_lib_init_alloca_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002E))
@@ -209,8 +219,8 @@ Global Symbols
 
 <P><STRONG><a name="[d3]"></a>__rt_lib_init_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000025))
 
-<P><STRONG><a name="[4b]"></a>__rt_lib_shutdown</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown.o(.ARM.Collect$$libshutdown$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls
+<P><STRONG><a name="[4c]"></a>__rt_lib_shutdown</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown.o(.ARM.Collect$$libshutdown$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls
 </UL>
 
 <P><STRONG><a name="[d4]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
@@ -234,41 +244,41 @@ Global Symbols
 
 <P><STRONG><a name="[db]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
 
-<P><STRONG><a name="[43]"></a>__rt_entry_sh</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry4.o(.ARM.Collect$$rtentry$$00000004))
+<P><STRONG><a name="[44]"></a>__rt_entry_sh</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry4.o(.ARM.Collect$$rtentry$$00000004))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_sh &rArr; __user_setup_stackheap
 </UL>
-<BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+<BR>[Calls]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[45]"></a>__rt_entry_li</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000A))
-<BR><BR>[Calls]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init
+<P><STRONG><a name="[46]"></a>__rt_entry_li</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000A))
+<BR><BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init
 </UL>
 
 <P><STRONG><a name="[dc]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
-<P><STRONG><a name="[47]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
+<P><STRONG><a name="[48]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
+<BR><BR>[Stack]<UL><LI>Max Depth = 184 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; displayResultHandler &rArr; setNumber &rArr; atof &rArr; __strtod_int &rArr; _local_sscanf &rArr; _scanf_real
 </UL>
-<BR>[Calls]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
+<BR>[Calls]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 </UL>
 
 <P><STRONG><a name="[dd]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
 
-<P><STRONG><a name="[80]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
+<P><STRONG><a name="[81]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 </UL>
 
-<P><STRONG><a name="[4a]"></a>__rt_exit_ls</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000003))
-<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
+<P><STRONG><a name="[4b]"></a>__rt_exit_ls</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000003))
+<BR><BR>[Calls]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
 </UL>
 
 <P><STRONG><a name="[de]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
 
-<P><STRONG><a name="[4c]"></a>__rt_exit_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
-<BR><BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
+<P><STRONG><a name="[4d]"></a>__rt_exit_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
+<BR><BR>[Calls]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
 </UL>
 
 <P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_mkl05z4.o(.text))
@@ -409,37 +419,39 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_mkl05z4.o(RESET)
 </UL>
 <P><STRONG><a name="[32]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_mkl05z4.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+<BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[4e]"></a>__2sprintf</STRONG> (Thumb, 36 bytes, Stack size 32 bytes, noretval__2sprintf.o(.text))
+<P><STRONG><a name="[4f]"></a>__2sprintf</STRONG> (Thumb, 36 bytes, Stack size 32 bytes, noretval__2sprintf.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
 <LI>Call Chain = __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sputc
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
+<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearTheValue
+<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearTheValue
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkTheValue
 </UL>
 
 <P><STRONG><a name="[3d]"></a>_printf_longlong_dec</STRONG> (Thumb, 94 bytes, Stack size 32 bytes, _printf_longlong_dec.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = _printf_longlong_dec &rArr; _printf_int_common
 </UL>
-<BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
-<LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ll_udiv10
+<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ll_udiv10
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_llu
+<BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_llu
+<LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_lld
 </UL>
 
-<P><STRONG><a name="[52]"></a>__printf</STRONG> (Thumb, 190 bytes, Stack size 24 bytes, __printf_ss.o(.text))
+<P><STRONG><a name="[53]"></a>__printf</STRONG> (Thumb, 190 bytes, Stack size 24 bytes, __printf_ss.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24 + Unknown Stack Size
 <LI>Call Chain = __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_percent
+<BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_percent
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
+<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
 </UL>
 
 <P><STRONG><a name="[df]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
@@ -448,133 +460,142 @@ Global Symbols
 
 <P><STRONG><a name="[e1]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[a2]"></a>__aeabi_d2lz</STRONG> (Thumb, 0 bytes, Stack size 20 bytes, dfixl.o(.text))
+<P><STRONG><a name="[a1]"></a>__aeabi_d2lz</STRONG> (Thumb, 0 bytes, Stack size 20 bytes, dfixl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = __aeabi_d2lz
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearTheValue
+<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearTheValue
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkTheValue
 </UL>
 
 <P><STRONG><a name="[e2]"></a>_ll_sfrom_d</STRONG> (Thumb, 174 bytes, Stack size 20 bytes, dfixl.o(.text), UNUSED)
 
-<P><STRONG><a name="[54]"></a>__read_errno</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, _rserrno.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __read_errno
+<P><STRONG><a name="[28]"></a>_sputc</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, _sputc.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_errno_addr
+<BR>[Address Reference Count : 1]<UL><LI> noretval__2sprintf.o(.text)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atof
-</UL>
-
-<P><STRONG><a name="[56]"></a>__set_errno</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, _rserrno.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __set_errno
-</UL>
-<BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_errno_addr
-</UL>
-<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atof
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ldexp
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_tofloat
-</UL>
-
 <P><STRONG><a name="[e3]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
 <P><STRONG><a name="[e4]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[e5]"></a>__aeabi_uidivmod</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, aeabi_sdivfast.o(.text), UNUSED)
+<P><STRONG><a name="[e5]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, indicate_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[6f]"></a>__aeabi_idivmod</STRONG> (Thumb, 472 bytes, Stack size 8 bytes, aeabi_sdivfast.o(.text))
+<P><STRONG><a name="[e6]"></a>__aeabi_uidivmod</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, aeabi_sdivfast.o(.text), UNUSED)
+
+<P><STRONG><a name="[70]"></a>__aeabi_idivmod</STRONG> (Thumb, 472 bytes, Stack size 8 bytes, aeabi_sdivfast.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_idivmod
 </UL>
-<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
+<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
 </UL>
 
-<P><STRONG><a name="[87]"></a>__aeabi_dadd</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, daddsub.o(.text))
+<P><STRONG><a name="[88]"></a>__aeabi_dadd</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, daddsub.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_dadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalcResult
+<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalcResult
 </UL>
 
-<P><STRONG><a name="[57]"></a>_dadd</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, daddsub.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub1
-<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd1
+<P><STRONG><a name="[55]"></a>_dadd</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, daddsub.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub1
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd1
 </UL>
 
-<P><STRONG><a name="[88]"></a>__aeabi_dsub</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, daddsub.o(.text))
+<P><STRONG><a name="[89]"></a>__aeabi_dsub</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, daddsub.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_dsub
 </UL>
-<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalcResult
+<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalcResult
 </UL>
 
-<P><STRONG><a name="[5a]"></a>_dsub</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, daddsub.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub1
-<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd1
+<P><STRONG><a name="[58]"></a>_dsub</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, daddsub.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub1
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd1
 </UL>
 
-<P><STRONG><a name="[e6]"></a>__aeabi_drsub</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, daddsub.o(.text), UNUSED)
+<P><STRONG><a name="[e7]"></a>__aeabi_drsub</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, daddsub.o(.text), UNUSED)
 
-<P><STRONG><a name="[5b]"></a>_drsb</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, daddsub.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub1
-<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd1
+<P><STRONG><a name="[59]"></a>_drsb</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, daddsub.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub1
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd1
 </UL>
 
-<P><STRONG><a name="[89]"></a>__aeabi_ddiv</STRONG> (Thumb, 0 bytes, Stack size 64 bytes, ddiv.o(.text))
+<P><STRONG><a name="[8b]"></a>__aeabi_ddiv</STRONG> (Thumb, 0 bytes, Stack size 64 bytes, ddiv.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = __aeabi_ddiv
 </UL>
-<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalcResult
+<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalcResult
 </UL>
 
-<P><STRONG><a name="[5d]"></a>_ddiv</STRONG> (Thumb, 1072 bytes, Stack size 64 bytes, ddiv.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_drdiv
+<P><STRONG><a name="[5b]"></a>_ddiv</STRONG> (Thumb, 1072 bytes, Stack size 64 bytes, ddiv.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_drdiv
 </UL>
 
-<P><STRONG><a name="[5c]"></a>_drdiv</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, ddiv.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ddiv
+<P><STRONG><a name="[5a]"></a>_drdiv</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, ddiv.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ddiv
 </UL>
 
-<P><STRONG><a name="[5f]"></a>__aeabi_l2d_normalise</STRONG> (Thumb, 104 bytes, Stack size 8 bytes, dfltl.o(.text))
+<P><STRONG><a name="[5d]"></a>__aeabi_l2d_normalise</STRONG> (Thumb, 104 bytes, Stack size 8 bytes, dfltl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_l2d_normalise
 </UL>
-<BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_l2d
+<BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ul2d
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_l2d
 </UL>
 
-<P><STRONG><a name="[5e]"></a>__aeabi_l2d</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, dfltl.o(.text))
+<P><STRONG><a name="[5c]"></a>__aeabi_l2d</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, dfltl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_l2d &rArr; __aeabi_l2d_normalise
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_l2d_normalise
+<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_l2d_normalise
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
+<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkTheValue
 </UL>
 
-<P><STRONG><a name="[e7]"></a>_ll_sto_d</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dfltl.o(.text), UNUSED)
+<P><STRONG><a name="[e8]"></a>_ll_sto_d</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dfltl.o(.text), UNUSED)
 
-<P><STRONG><a name="[60]"></a>__aeabi_ul2d</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, dfltl.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_l2d_normalise
+<P><STRONG><a name="[5e]"></a>__aeabi_ul2d</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, dfltl.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_l2d_normalise
 </UL>
 
-<P><STRONG><a name="[e8]"></a>_ll_uto_d</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dfltl.o(.text), UNUSED)
+<P><STRONG><a name="[e9]"></a>_ll_uto_d</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dfltl.o(.text), UNUSED)
 
-<P><STRONG><a name="[86]"></a>__aeabi_dmul</STRONG> (Thumb, 0 bytes, Stack size 56 bytes, dmul.o(.text))
+<P><STRONG><a name="[87]"></a>__aeabi_dmul</STRONG> (Thumb, 0 bytes, Stack size 56 bytes, dmul.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = __aeabi_dmul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalcResult
+<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalcResult
 </UL>
 
-<P><STRONG><a name="[e9]"></a>_dmul</STRONG> (Thumb, 558 bytes, Stack size 56 bytes, dmul.o(.text), UNUSED)
+<P><STRONG><a name="[ea]"></a>_dmul</STRONG> (Thumb, 558 bytes, Stack size 56 bytes, dmul.o(.text), UNUSED)
 
-<P><STRONG><a name="[50]"></a>_ll_udiv10</STRONG> (Thumb, 122 bytes, Stack size 16 bytes, lludiv10.o(.text))
+<P><STRONG><a name="[51]"></a>_ll_udiv10</STRONG> (Thumb, 122 bytes, Stack size 16 bytes, lludiv10.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = _ll_udiv10
 </UL>
-<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 <LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_longlong_dec
 </UL>
 
-<P><STRONG><a name="[51]"></a>_printf_int_common</STRONG> (Thumb, 176 bytes, Stack size 40 bytes, _printf_intcommon.o(.text))
+<P><STRONG><a name="[5f]"></a>__read_errno</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, _rserrno.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __read_errno
+</UL>
+<BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_errno_addr
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atof
+</UL>
+
+<P><STRONG><a name="[61]"></a>__set_errno</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, _rserrno.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __set_errno
+</UL>
+<BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_errno_addr
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atof
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ldexp
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_tofloat
+</UL>
+
+<P><STRONG><a name="[52]"></a>_printf_int_common</STRONG> (Thumb, 176 bytes, Stack size 40 bytes, _printf_intcommon.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = _printf_int_common
 </UL>
-<BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding (Weak Reference)
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding (Weak Reference)
+<BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding (Weak Reference)
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding (Weak Reference)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_longlong_dec
 </UL>
@@ -582,67 +603,62 @@ Global Symbols
 <P><STRONG><a name="[2e]"></a>_printf_fp_dec_real</STRONG> (Thumb, 620 bytes, Stack size 96 bytes, _printf_fp_dec.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 368<LI>Call Chain = _printf_fp_dec_real &rArr; _fp_digits &rArr; _btod_etento &rArr; _btod_emul &rArr; btod_internal_mul &rArr; __ARM_common_ll_muluu
 </UL>
-<BR>[Calls]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding (Weak Reference)
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding (Weak Reference)
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_fpclassify
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_udiv10
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_infnan
-<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_locale
+<BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding (Weak Reference)
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding (Weak Reference)
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_fpclassify
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_udiv10
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_infnan
+<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_locale
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> printf1.o(x$fpl$printf1)
 </UL>
-<P><STRONG><a name="[4f]"></a>_printf_char_common</STRONG> (Thumb, 32 bytes, Stack size 64 bytes, _printf_char_common.o(.text))
+<P><STRONG><a name="[50]"></a>_printf_char_common</STRONG> (Thumb, 32 bytes, Stack size 64 bytes, _printf_char_common.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88 + Unknown Stack Size
 <LI>Call Chain = _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
+<BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 
-<P><STRONG><a name="[28]"></a>_sputc</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, _sputc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> noretval__2sprintf.o(.text)
-</UL>
-<P><STRONG><a name="[6d]"></a>__strtod_int</STRONG> (Thumb, 98 bytes, Stack size 40 bytes, strtod.o(.text))
+<P><STRONG><a name="[6e]"></a>__strtod_int</STRONG> (Thumb, 98 bytes, Stack size 40 bytes, strtod.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = __strtod_int &rArr; _local_sscanf &rArr; _scanf_real
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_local_sscanf
+<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_local_sscanf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atof
+<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atof
 </UL>
 
-<P><STRONG><a name="[3f]"></a>__rt_locale</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, rt_locale_intlibspace.o(.text))
+<P><STRONG><a name="[40]"></a>__rt_locale</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, rt_locale_intlibspace.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec_real
-<LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_lc_common
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_lc_common
 <LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_really_real
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_ctype_table
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_ctype_table
 </UL>
 
-<P><STRONG><a name="[55]"></a>__aeabi_errno_addr</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, rt_errno_addr_intlibspace.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__read_errno
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
+<P><STRONG><a name="[60]"></a>__aeabi_errno_addr</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, rt_errno_addr_intlibspace.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__read_errno
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
 </UL>
 
-<P><STRONG><a name="[ea]"></a>__errno$intlibspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_errno_addr_intlibspace.o(.text), UNUSED)
+<P><STRONG><a name="[eb]"></a>__errno$intlibspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_errno_addr_intlibspace.o(.text), UNUSED)
 
-<P><STRONG><a name="[eb]"></a>__rt_errno_addr$intlibspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_errno_addr_intlibspace.o(.text), UNUSED)
+<P><STRONG><a name="[ec]"></a>__rt_errno_addr$intlibspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_errno_addr_intlibspace.o(.text), UNUSED)
 
 <P><STRONG><a name="[2c]"></a>isspace</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, isspace.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = isspace &rArr; __rt_ctype_table
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_ctype_table
+<BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_ctype_table
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> strtod.o(.text)
 </UL>
-<P><STRONG><a name="[69]"></a>_printf_fp_infnan</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, _printf_fp_infnan.o(.text))
+<P><STRONG><a name="[6a]"></a>_printf_fp_infnan</STRONG> (Thumb, 120 bytes, Stack size 24 bytes, _printf_fp_infnan.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = _printf_fp_infnan
 </UL>
-<BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding (Weak Reference)
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding (Weak Reference)
+<BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding (Weak Reference)
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding (Weak Reference)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec_real
 </UL>
@@ -653,92 +669,92 @@ Global Symbols
 <P><STRONG><a name="[2b]"></a>_sbackspace</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, _sgetc.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> strtod.o(.text)
 </UL>
-<P><STRONG><a name="[64]"></a>_btod_etento</STRONG> (Thumb, 210 bytes, Stack size 72 bytes, bigflt0.o(.text))
+<P><STRONG><a name="[65]"></a>_btod_etento</STRONG> (Thumb, 210 bytes, Stack size 72 bytes, bigflt0.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = _btod_etento &rArr; _btod_emul &rArr; btod_internal_mul &rArr; __ARM_common_ll_muluu
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_idivmod
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_ediv
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emul
+<BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_idivmod
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_ediv
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
+<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
 </UL>
 
-<P><STRONG><a name="[65]"></a>_btod_d2e</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, btod.o(.text))
+<P><STRONG><a name="[66]"></a>_btod_d2e</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, btod.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = _btod_d2e
 </UL>
-<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
-<P><STRONG><a name="[67]"></a>_btod_emul</STRONG> (Thumb, 28 bytes, Stack size 24 bytes, btod.o(.text))
+<P><STRONG><a name="[68]"></a>_btod_emul</STRONG> (Thumb, 28 bytes, Stack size 24 bytes, btod.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = _btod_emul &rArr; btod_internal_mul &rArr; __ARM_common_ll_muluu
 </UL>
-<BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;btod_internal_mul
+<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;btod_internal_mul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
+<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
 </UL>
 
-<P><STRONG><a name="[72]"></a>_btod_emuld</STRONG> (Thumb, 144 bytes, Stack size 56 bytes, btod.o(.text))
+<P><STRONG><a name="[73]"></a>_btod_emuld</STRONG> (Thumb, 144 bytes, Stack size 56 bytes, btod.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = _btod_emuld &rArr; btod_internal_mul &rArr; __ARM_common_ll_muluu
 </UL>
-<BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;btod_internal_mul
+<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;btod_internal_mul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
+<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
 </UL>
 
-<P><STRONG><a name="[66]"></a>_btod_ediv</STRONG> (Thumb, 26 bytes, Stack size 24 bytes, btod.o(.text))
+<P><STRONG><a name="[67]"></a>_btod_ediv</STRONG> (Thumb, 26 bytes, Stack size 24 bytes, btod.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = _btod_ediv &rArr; btod_internal_div
 </UL>
-<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;btod_internal_div
+<BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;btod_internal_div
 </UL>
-<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
+<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
 </UL>
 
-<P><STRONG><a name="[74]"></a>_btod_edivd</STRONG> (Thumb, 124 bytes, Stack size 56 bytes, btod.o(.text))
+<P><STRONG><a name="[75]"></a>_btod_edivd</STRONG> (Thumb, 124 bytes, Stack size 56 bytes, btod.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = _btod_edivd &rArr; btod_internal_div
 </UL>
-<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;btod_internal_div
+<BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;btod_internal_div
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
+<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
 </UL>
 
-<P><STRONG><a name="[6a]"></a>__rt_udiv10</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, rtudiv10.o(.text))
+<P><STRONG><a name="[6b]"></a>__rt_udiv10</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, rtudiv10.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec_real
 </UL>
 
-<P><STRONG><a name="[75]"></a>__fpl_dcmp_InfNaN</STRONG> (Thumb, 154 bytes, Stack size 24 bytes, dcmpin.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcheck_NaN2
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_cmpreturn
+<P><STRONG><a name="[76]"></a>__fpl_dcmp_InfNaN</STRONG> (Thumb, 154 bytes, Stack size 24 bytes, dcmpin.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcheck_NaN2
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_cmpreturn
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dcmple
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dcmpeq
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_drcmple
 </UL>
 
-<P><STRONG><a name="[ec]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[ed]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
-<P><STRONG><a name="[78]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+<P><STRONG><a name="[79]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[ed]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[ee]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
-<P><STRONG><a name="[44]"></a>__user_setup_stackheap</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
+<P><STRONG><a name="[45]"></a>__user_setup_stackheap</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
 <LI>Call Chain = __user_setup_stackheap
 </UL>
 <BR>[Calls]<UL><LI><a href="#[32]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
+<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
 </UL>
-<BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_sh
+<BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_sh
 </UL>
 
-<P><STRONG><a name="[6e]"></a>__rt_ctype_table</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, rt_ctype_table.o(.text))
+<P><STRONG><a name="[6f]"></a>__rt_ctype_table</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, rt_ctype_table.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __rt_ctype_table
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_locale
+<BR>[Calls]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_locale
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;isspace
 </UL>
@@ -746,76 +762,76 @@ Global Symbols
 <P><STRONG><a name="[2f]"></a>_scanf_really_real</STRONG> (Thumb, 710 bytes, Stack size 120 bytes, scanf_fp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 376<LI>Call Chain = _scanf_really_real &rArr; _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; btod_internal_mul &rArr; __ARM_common_ll_muluu
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_is_digit
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_narrow
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_infnan
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_hex_real
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
-<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_locale
+<BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_is_digit
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_narrow
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_infnan
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_hex_real
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
+<LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_locale
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> scanf1.o(x$fpl$scanf1)
 </UL>
-<P><STRONG><a name="[49]"></a>exit</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, exit.o(.text))
+<P><STRONG><a name="[4a]"></a>exit</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, exit.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
 <LI>Call Chain = exit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_call_atexit_fns (Weak Reference)
+<BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
+<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_call_atexit_fns (Weak Reference)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
+<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
 <P><STRONG><a name="[ba]"></a>strcmp</STRONG> (Thumb, 176 bytes, Stack size 16 bytes, strcmpv6m.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = strcmp
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_get_lc_ctype
-<LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_get_lc_numeric
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_get_lc_numeric
 </UL>
 
-<P><STRONG><a name="[76]"></a>__fpl_cmpreturn</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, cmpret.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_return_NaN
-<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmp_InfNaN
+<P><STRONG><a name="[77]"></a>__fpl_cmpreturn</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, cmpret.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_return_NaN
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmp_InfNaN
 </UL>
 
-<P><STRONG><a name="[77]"></a>__fpl_dcheck_NaN2</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, dnan2.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_return_NaN
+<P><STRONG><a name="[78]"></a>__fpl_dcheck_NaN2</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, dnan2.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_return_NaN
 </UL>
-<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmp_InfNaN
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmp_InfNaN
 </UL>
 
-<P><STRONG><a name="[83]"></a>__aeabi_llsl</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, llshl.o(.text))
+<P><STRONG><a name="[84]"></a>__aeabi_llsl</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, llshl.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_llsl
 </UL>
 <BR>[Called By]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_really_hex_real
 </UL>
 
-<P><STRONG><a name="[ee]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, llshl.o(.text), UNUSED)
+<P><STRONG><a name="[ef]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, llshl.o(.text), UNUSED)
 
-<P><STRONG><a name="[7a]"></a>__aeabi_lmul</STRONG> (Thumb, 48 bytes, Stack size 12 bytes, llmul.o(.text))
+<P><STRONG><a name="[7b]"></a>__aeabi_lmul</STRONG> (Thumb, 48 bytes, Stack size 12 bytes, llmul.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = __aeabi_lmul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
+<BR>[Called By]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_value
 </UL>
 
-<P><STRONG><a name="[ef]"></a>_ll_mul</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, llmul.o(.text), UNUSED)
+<P><STRONG><a name="[f0]"></a>_ll_mul</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, llmul.o(.text), UNUSED)
 
-<P><STRONG><a name="[81]"></a>__fpl_return_NaN</STRONG> (Thumb, 94 bytes, Stack size 8 bytes, retnan.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_cmpreturn
+<P><STRONG><a name="[82]"></a>__fpl_return_NaN</STRONG> (Thumb, 94 bytes, Stack size 8 bytes, retnan.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_cmpreturn
 </UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcheck_NaN2
+<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcheck_NaN2
 </UL>
 
-<P><STRONG><a name="[4d]"></a>_sys_exit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sys_exit.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
+<P><STRONG><a name="[4e]"></a>_sys_exit</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, sys_exit.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
 </UL>
 
 <P><STRONG><a name="[30]"></a>_scanf_really_hex_real</STRONG> (Thumb, 806 bytes, Stack size 72 bytes, scanf_hexfp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = _scanf_really_hex_real &rArr; __mathlib_narrow &rArr; __mathlib_tofloat &rArr; frexp &rArr; __ARM_scalbn
 </UL>
-<BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__support_ldexp
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_chval
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_narrow
-<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
+<BR>[Calls]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__support_ldexp
+<LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_chval
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_narrow
+<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> scanf2.o(x$fpl$scanf2)
 </UL>
@@ -830,11 +846,9 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_tofloat
 </UL>
 
-<P><STRONG><a name="[f0]"></a>_d2f</STRONG> (Thumb, 120 bytes, Stack size 12 bytes, d2f.o(.text), UNUSED)
+<P><STRONG><a name="[f1]"></a>_d2f</STRONG> (Thumb, 120 bytes, Stack size 12 bytes, d2f.o(.text), UNUSED)
 
-<P><STRONG><a name="[f1]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, indicate_semi.o(.text), UNUSED)
-
-<P><STRONG><a name="[82]"></a>_chval</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, _chval.o(.text))
+<P><STRONG><a name="[83]"></a>_chval</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, _chval.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_really_hex_real
 </UL>
 
@@ -847,219 +861,225 @@ Global Symbols
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;frexp
 </UL>
 
-<P><STRONG><a name="[85]"></a>CalcResult</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, calc.o(.text.CalcResult))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = CalcResult &rArr; __aeabi_ddiv
+<P><STRONG><a name="[86]"></a>CalcResult</STRONG> (Thumb, 146 bytes, Stack size 24 bytes, calc.o(.text.CalcResult))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = CalcResult &rArr; __aeabi_ddiv
 </UL>
-<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
-<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
+<BR>[Calls]<UL><LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
+<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmpeq
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
+<LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkTheValue
+<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkTheValue
 </UL>
 
-<P><STRONG><a name="[97]"></a>I2C_Init</STRONG> (Thumb, 104 bytes, Stack size 8 bytes, i2c.o(.text.I2C_Init))
+<P><STRONG><a name="[99]"></a>I2C_Init</STRONG> (Thumb, 104 bytes, Stack size 8 bytes, i2c.o(.text.I2C_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = I2C_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Init
+<BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Init
 </UL>
 
-<P><STRONG><a name="[8a]"></a>I2C_Write</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, i2c.o(.text.I2C_Write))
+<P><STRONG><a name="[8c]"></a>I2C_Write</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, i2c.o(.text.I2C_Write))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = I2C_Write &rArr; i2c_wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_wait
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_tran
-<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_send
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_m_stop
-<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_m_start
-<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_enable
-<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_disable
+<BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_wait
+<LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_tran
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_send
+<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_m_stop
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_m_start
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_enable
+<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;i2c_disable
 </UL>
-<BR>[Called By]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PCF8574_Write
+<BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PCF8574_Write
 </UL>
 
-<P><STRONG><a name="[92]"></a>LCD1602_Backlight</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, lcd1602.o(.text.LCD1602_Backlight))
+<P><STRONG><a name="[94]"></a>LCD1602_Backlight</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, lcd1602.o(.text.LCD1602_Backlight))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LCD1602_Backlight &rArr; PCF8574_Write &rArr; I2C_Write &rArr; i2c_wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PCF8574_Write
+<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PCF8574_Write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[94]"></a>LCD1602_ClearAll</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, lcd1602.o(.text.LCD1602_ClearAll))
+<P><STRONG><a name="[96]"></a>LCD1602_ClearAll</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, lcd1602.o(.text.LCD1602_ClearAll))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = LCD1602_ClearAll &rArr; LCD1602_Write8 &rArr; LCD1602_Write4 &rArr; PCF8574_Write &rArr; I2C_Write &rArr; i2c_wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Write8
+<BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Write8
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearTheValue
+<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearTheValue
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkTheValue
 </UL>
 
-<P><STRONG><a name="[96]"></a>LCD1602_Init</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, lcd1602.o(.text.LCD1602_Init))
+<P><STRONG><a name="[98]"></a>LCD1602_Init</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, lcd1602.o(.text.LCD1602_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = LCD1602_Init &rArr; LCD1602_Write8 &rArr; LCD1602_Write4 &rArr; PCF8574_Write &rArr; I2C_Write &rArr; i2c_wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PCF8574_Write
-<LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Write8
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Init
+<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PCF8574_Write
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Write8
+<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[98]"></a>LCD1602_Print</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, lcd1602.o(.text.LCD1602_Print))
+<P><STRONG><a name="[9a]"></a>LCD1602_Print</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, lcd1602.o(.text.LCD1602_Print))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = LCD1602_Print &rArr; LCD1602_Write8 &rArr; LCD1602_Write4 &rArr; PCF8574_Write &rArr; I2C_Write &rArr; i2c_wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Write8
+<BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Write8
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkTheValue
 </UL>
 
-<P><STRONG><a name="[99]"></a>LCD1602_SetCursor</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, lcd1602.o(.text.LCD1602_SetCursor))
+<P><STRONG><a name="[9b]"></a>LCD1602_SetCursor</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, lcd1602.o(.text.LCD1602_SetCursor))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = LCD1602_SetCursor &rArr; LCD1602_Write8 &rArr; LCD1602_Write4 &rArr; PCF8574_Write &rArr; I2C_Write &rArr; i2c_wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Write8
+<BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Write8
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
-<LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
+<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkTheValue
 </UL>
 
-<P><STRONG><a name="[9a]"></a>LCD1602_Write4</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, lcd1602.o(.text.LCD1602_Write4))
+<P><STRONG><a name="[9c]"></a>LCD1602_Write4</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, lcd1602.o(.text.LCD1602_Write4))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LCD1602_Write4 &rArr; PCF8574_Write &rArr; I2C_Write &rArr; i2c_wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PCF8574_Write
+<BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PCF8574_Write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Write8
+<BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Write8
 </UL>
 
-<P><STRONG><a name="[95]"></a>LCD1602_Write8</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, lcd1602.o(.text.LCD1602_Write8))
+<P><STRONG><a name="[97]"></a>LCD1602_Write8</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, lcd1602.o(.text.LCD1602_Write8))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = LCD1602_Write8 &rArr; LCD1602_Write4 &rArr; PCF8574_Write &rArr; I2C_Write &rArr; i2c_wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Write4
+<BR>[Calls]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Write4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_SetCursor
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Print
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Init
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_ClearAll
+<BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_SetCursor
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Print
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Init
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_ClearAll
 </UL>
 
-<P><STRONG><a name="[93]"></a>PCF8574_Write</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, lcd1602.o(.text.PCF8574_Write))
+<P><STRONG><a name="[95]"></a>PCF8574_Write</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, lcd1602.o(.text.PCF8574_Write))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = PCF8574_Write &rArr; I2C_Write &rArr; i2c_wait
 </UL>
-<BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Write
+<BR>[Calls]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Write4
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Init
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Backlight
+<BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Write4
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Init
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Backlight
 </UL>
 
-<P><STRONG><a name="[1c]"></a>PIT_IRQHandler</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, main.o(.text.PIT_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = PIT_IRQHandler &rArr; keyPressed
-</UL>
-<BR>[Calls]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keyPressed
-</UL>
+<P><STRONG><a name="[1c]"></a>PIT_IRQHandler</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, main.o(.text.PIT_IRQHandler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_mkl05z4.o(RESET)
 </UL>
-<P><STRONG><a name="[9c]"></a>PIT_Init</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, pit.o(.text.PIT_Init))
+<P><STRONG><a name="[9d]"></a>PIT_Init</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, pit.o(.text.PIT_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = PIT_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidiv
-<LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
+<BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[26]"></a>SystemInit</STRONG> (Thumb, 76 bytes, Stack size 0 bytes, system_mkl05z4.o(.text.SystemInit))
 <BR>[Address Reference Count : 1]<UL><LI> startup_mkl05z4.o(.text)
 </UL>
 <P><STRONG><a name="[aa]"></a>checkPinC</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, keypad.o(.text.checkPinC))
-<BR><BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keyPressed
+<BR><BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keyPressed
 </UL>
 
 <P><STRONG><a name="[a8]"></a>checkPinR</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, keypad.o(.text.checkPinR))
-<BR><BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keyPressed
+<BR><BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keyPressed
 </UL>
 
 <P><STRONG><a name="[a0]"></a>checkTheValue</STRONG> (Thumb, 216 bytes, Stack size 32 bytes, main.o(.text.checkTheValue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
 <LI>Call Chain = checkTheValue &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_l2d
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2lz
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmplt
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmpeq
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_SetCursor
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Print
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_ClearAll
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalcResult
+<BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_l2d
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2lz
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmpeq
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_SetCursor
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Print
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_ClearAll
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalcResult
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
+<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
 </UL>
 
-<P><STRONG><a name="[a4]"></a>clearTheValue</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, main.o(.text.clearTheValue))
+<P><STRONG><a name="[a2]"></a>clearTheValue</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, main.o(.text.clearTheValue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136 + Unknown Stack Size
 <LI>Call Chain = clearTheValue &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2lz
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_ClearAll
+<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2lz
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_ClearAll
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
+<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
 </UL>
 
-<P><STRONG><a name="[a5]"></a>displayResultHandler</STRONG> (Thumb, 168 bytes, Stack size 16 bytes, main.o(.text.displayResultHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
+<P><STRONG><a name="[a3]"></a>displayResultHandler</STRONG> (Thumb, 328 bytes, Stack size 32 bytes, main.o(.text.displayResultHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 184 + Unknown Stack Size
 <LI>Call Chain = displayResultHandler &rArr; setNumber &rArr; atof &rArr; __strtod_int &rArr; _local_sscanf &rArr; _scanf_real
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearTheValue
+<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atof
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_l2d
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2lz
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmpeq
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearTheValue
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkTheValue
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_ClearAll
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_SetCursor
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Print
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_ClearAll
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalcResult
 </UL>
-<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[91]"></a>i2c_disable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, i2c.o(.text.i2c_disable))
-<BR><BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Write
-</UL>
-
-<P><STRONG><a name="[8b]"></a>i2c_enable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, i2c.o(.text.i2c_enable))
-<BR><BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Write
+<BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[8d]"></a>i2c_m_start</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, i2c.o(.text.i2c_m_start))
-<BR><BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Write
+<P><STRONG><a name="[93]"></a>i2c_disable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, i2c.o(.text.i2c_disable))
+<BR><BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Write
 </UL>
 
-<P><STRONG><a name="[90]"></a>i2c_m_stop</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, i2c.o(.text.i2c_m_stop))
-<BR><BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Write
+<P><STRONG><a name="[8d]"></a>i2c_enable</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, i2c.o(.text.i2c_enable))
+<BR><BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Write
 </UL>
 
-<P><STRONG><a name="[8e]"></a>i2c_send</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, i2c.o(.text.i2c_send))
-<BR><BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Write
+<P><STRONG><a name="[8f]"></a>i2c_m_start</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, i2c.o(.text.i2c_m_start))
+<BR><BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Write
 </UL>
 
-<P><STRONG><a name="[8c]"></a>i2c_tran</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, i2c.o(.text.i2c_tran))
-<BR><BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Write
+<P><STRONG><a name="[92]"></a>i2c_m_stop</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, i2c.o(.text.i2c_m_stop))
+<BR><BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Write
 </UL>
 
-<P><STRONG><a name="[8f]"></a>i2c_wait</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, i2c.o(.text.i2c_wait))
+<P><STRONG><a name="[90]"></a>i2c_send</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, i2c.o(.text.i2c_send))
+<BR><BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Write
+</UL>
+
+<P><STRONG><a name="[8e]"></a>i2c_tran</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, i2c.o(.text.i2c_tran))
+<BR><BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Write
+</UL>
+
+<P><STRONG><a name="[91]"></a>i2c_wait</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, i2c.o(.text.i2c_wait))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = i2c_wait
 </UL>
-<BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Write
+<BR>[Called By]<UL><LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Write
 </UL>
 
 <P><STRONG><a name="[ab]"></a>keyPadInit</STRONG> (Thumb, 124 bytes, Stack size 0 bytes, keypad.o(.text.keyPadInit))
-<BR><BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR><BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[9b]"></a>keyPressed</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, keypad.o(.text.keyPressed))
+<P><STRONG><a name="[a6]"></a>keyPressed</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, keypad.o(.text.keyPressed))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = keyPressed
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setPinsRasOutPut
@@ -1067,63 +1087,58 @@ Global Symbols
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkPinR
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkPinC
 </UL>
-<BR>[Called By]<UL><LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIT_IRQHandler
+<BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[48]"></a>main</STRONG> (Thumb, 80 bytes, Stack size 0 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
+<P><STRONG><a name="[49]"></a>main</STRONG> (Thumb, 144 bytes, Stack size 0 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 184 + Unknown Stack Size
 <LI>Call Chain = main &rArr; displayResultHandler &rArr; setNumber &rArr; atof &rArr; __strtod_int &rArr; _local_sscanf &rArr; _scanf_real
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keyPadInit
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
-<LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIT_Init
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_SetCursor
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Print
-<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Init
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_ClearAll
-<LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Backlight
+<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keyPressed
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keyPadInit
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
+<LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIT_Init
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_SetCursor
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Print
+<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Init
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_ClearAll
+<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Backlight
 </UL>
-<BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
+<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[a6]"></a>setNumber</STRONG> (Thumb, 184 bytes, Stack size 24 bytes, main.o(.text.setNumber))
+<P><STRONG><a name="[a4]"></a>setNumber</STRONG> (Thumb, 184 bytes, Stack size 24 bytes, main.o(.text.setNumber))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
 <LI>Call Chain = setNumber &rArr; atof &rArr; __strtod_int &rArr; _local_sscanf &rArr; _scanf_real
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atof
-<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_l2d
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2lz
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmplt
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmpeq
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_SetCursor
-<LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Print
-<LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_ClearAll
+<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atof
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_l2d
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2lz
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmplt
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmpeq
+<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_SetCursor
+<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_Print
+<LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD1602_ClearAll
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
+<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
 </UL>
 
 <P><STRONG><a name="[a7]"></a>setPinsCasOutPut</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, keypad.o(.text.setPinsCasOutPut))
-<BR><BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keyPressed
+<BR><BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keyPressed
 </UL>
 
 <P><STRONG><a name="[a9]"></a>setPinsRasOutPut</STRONG> (Thumb, 76 bytes, Stack size 0 bytes, keypad.o(.text.setPinsRasOutPut))
-<BR><BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keyPressed
+<BR><BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keyPressed
 </UL>
 
-<P><STRONG><a name="[9d]"></a>__aeabi_uidiv</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, aeabi_sdivfast.o(.text_divfast))
-<BR><BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIT_Init
-</UL>
-
-<P><STRONG><a name="[f2]"></a>__aeabi_idiv</STRONG> (Thumb, 434 bytes, Stack size 8 bytes, aeabi_sdivfast.o(.text_divfast), UNUSED)
-
-<P><STRONG><a name="[71]"></a>__ARM_common_ll_muluu</STRONG> (Thumb, 48 bytes, Stack size 24 bytes, btod.o(i.__ARM_common_ll_muluu))
+<P><STRONG><a name="[72]"></a>__ARM_common_ll_muluu</STRONG> (Thumb, 48 bytes, Stack size 24 bytes, btod.o(i.__ARM_common_ll_muluu))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __ARM_common_ll_muluu
 </UL>
-<BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;btod_internal_mul
+<BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;btod_internal_mul
 </UL>
 
-<P><STRONG><a name="[68]"></a>__ARM_fpclassify</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, fpclassify.o(i.__ARM_fpclassify))
+<P><STRONG><a name="[69]"></a>__ARM_fpclassify</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, fpclassify.o(i.__ARM_fpclassify))
 <BR><BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec_real
 </UL>
 
@@ -1143,7 +1158,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ldexp
 </UL>
 
-<P><STRONG><a name="[7e]"></a>__mathlib_narrow</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, narrow.o(i.__mathlib_narrow))
+<P><STRONG><a name="[7f]"></a>__mathlib_narrow</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, narrow.o(i.__mathlib_narrow))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = __mathlib_narrow &rArr; __mathlib_tofloat &rArr; frexp &rArr; __ARM_scalbn
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_tofloat
@@ -1156,15 +1171,15 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = __mathlib_tofloat &rArr; frexp &rArr; __ARM_scalbn
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmpeq
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 <LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;frexp
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_narrow
+<BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_narrow
 </UL>
 
-<P><STRONG><a name="[84]"></a>__support_ldexp</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, ldexp.o(i.__support_ldexp))
+<P><STRONG><a name="[85]"></a>__support_ldexp</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, ldexp.o(i.__support_ldexp))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = __support_ldexp &rArr; ldexp &rArr; __aeabi_cdcmpeq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ldexp
@@ -1172,40 +1187,42 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_really_hex_real
 </UL>
 
-<P><STRONG><a name="[a3]"></a>__aeabi_dcmpeq</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, dcmp.o(i._deq))
+<P><STRONG><a name="[8a]"></a>__aeabi_dcmpeq</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, dcmp.o(i._deq))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_dcmpeq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
+<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkTheValue
+<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalcResult
 </UL>
 
 <P><STRONG><a name="[b6]"></a>_deq</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, dcmp.o(i._deq), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dcmpeq
 </UL>
 
-<P><STRONG><a name="[a1]"></a>__aeabi_dcmplt</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, dcmp.o(i._dls))
+<P><STRONG><a name="[ac]"></a>__aeabi_dcmplt</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, dcmp.o(i._dls))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_dcmplt
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkTheValue
+<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
 </UL>
 
 <P><STRONG><a name="[b8]"></a>_dls</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, dcmp.o(i._dls), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dcmple
 </UL>
 
-<P><STRONG><a name="[7d]"></a>_is_digit</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, __printf_wp.o(i._is_digit))
+<P><STRONG><a name="[7e]"></a>_is_digit</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, __printf_wp.o(i._is_digit))
 <BR><BR>[Called By]<UL><LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_really_real
 </UL>
 
-<P><STRONG><a name="[ac]"></a>atof</STRONG> (Thumb, 44 bytes, Stack size 24 bytes, atof.o(i.atof))
+<P><STRONG><a name="[a5]"></a>atof</STRONG> (Thumb, 44 bytes, Stack size 24 bytes, atof.o(i.atof))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = atof &rArr; __strtod_int &rArr; _local_sscanf &rArr; _scanf_real
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__strtod_int
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__read_errno
+<BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__strtod_int
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__read_errno
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
+<BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setNumber
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayResultHandler
 </UL>
 
 <P><STRONG><a name="[b1]"></a>frexp</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, frexp.o(i.frexp))
@@ -1220,20 +1237,20 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = ldexp &rArr; __aeabi_cdcmpeq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmpeq
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__set_errno
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_underflow
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__mathlib_dbl_overflow
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_scalbn
 </UL>
-<BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__support_ldexp
+<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__support_ldexp
 </UL>
 
-<P><STRONG><a name="[42]"></a>_get_lc_numeric</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, lc_numeric_c.o(locale$$code))
+<P><STRONG><a name="[43]"></a>_get_lc_numeric</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, lc_numeric_c.o(locale$$code))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = _get_lc_numeric &rArr; strcmp
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
 </UL>
-<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_lc_numeric_2
+<BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_lc_numeric_2
 </UL>
 
 <P><STRONG><a name="[2d]"></a>_get_lc_ctype</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, lc_ctype_c.o(locale$$code))
@@ -1241,7 +1258,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
 </UL>
-<BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_lc_ctype_2
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_lc_ctype_2
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rt_ctype_table.o(.text)
 </UL>
@@ -1253,15 +1270,15 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[b7]"></a>_dcmpeq</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, deqf.o(x$fpl$deqf), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmp_InfNaN
+<BR><BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmp_InfNaN
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_deq
 </UL>
 
-<P><STRONG><a name="[f3]"></a>__aeabi_cdcmple</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, dlef.o(x$fpl$dleqf), UNUSED)
+<P><STRONG><a name="[f2]"></a>__aeabi_cdcmple</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, dlef.o(x$fpl$dleqf), UNUSED)
 
 <P><STRONG><a name="[b9]"></a>_dcmple</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, dlef.o(x$fpl$dleqf), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmp_InfNaN
+<BR><BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmp_InfNaN
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dls
 </UL>
@@ -1273,7 +1290,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[bb]"></a>_drcmple</STRONG> (Thumb, 100 bytes, Stack size 32 bytes, drlef.o(x$fpl$drleqf), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmp_InfNaN
+<BR><BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmp_InfNaN
 </UL>
 
 <P><STRONG><a name="[3a]"></a>_printf_fp_dec</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, printf1.o(x$fpl$printf1))
@@ -1282,19 +1299,19 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_f
 </UL>
 
-<P><STRONG><a name="[6c]"></a>_scanf_real</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, scanf1.o(x$fpl$scanf1))
+<P><STRONG><a name="[6d]"></a>_scanf_real</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, scanf1.o(x$fpl$scanf1))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = _scanf_real
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_local_sscanf
+<BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_local_sscanf
 </UL>
 
-<P><STRONG><a name="[7c]"></a>_scanf_hex_real</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, scanf2.o(x$fpl$scanf2))
+<P><STRONG><a name="[7d]"></a>_scanf_hex_real</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, scanf2.o(x$fpl$scanf2))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = _scanf_hex_real
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_really_real
 </UL>
 
-<P><STRONG><a name="[7b]"></a>_scanf_infnan</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, scanf2.o(x$fpl$scanf2))
+<P><STRONG><a name="[7c]"></a>_scanf_infnan</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, scanf2.o(x$fpl$scanf2))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = _scanf_infnan
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_really_real
@@ -1304,33 +1321,33 @@ Global Symbols
 Local Symbols
 </H3>
 <P><STRONG><a name="[9e]"></a>__NVIC_ClearPendingIRQ</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, pit.o(.text.__NVIC_ClearPendingIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIT_Init
+<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIT_Init
 </UL>
 
 <P><STRONG><a name="[9f]"></a>__NVIC_EnableIRQ</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, pit.o(.text.__NVIC_EnableIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIT_Init
+<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PIT_Init
 </UL>
 
-<P><STRONG><a name="[59]"></a>_dadd1</STRONG> (Thumb, 290 bytes, Stack size 20 bytes, daddsub.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_drsb
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
+<P><STRONG><a name="[57]"></a>_dadd1</STRONG> (Thumb, 290 bytes, Stack size 20 bytes, daddsub.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_drsb
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
 </UL>
 
-<P><STRONG><a name="[58]"></a>_dsub1</STRONG> (Thumb, 470 bytes, Stack size 40 bytes, daddsub.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_drsb
-<LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub
-<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
+<P><STRONG><a name="[56]"></a>_dsub1</STRONG> (Thumb, 470 bytes, Stack size 40 bytes, daddsub.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_drsb
+<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
 </UL>
 
-<P><STRONG><a name="[63]"></a>_fp_digits</STRONG> (Thumb, 412 bytes, Stack size 96 bytes, _printf_fp_dec.o(.text))
+<P><STRONG><a name="[64]"></a>_fp_digits</STRONG> (Thumb, 412 bytes, Stack size 96 bytes, _printf_fp_dec.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 272<LI>Call Chain = _fp_digits &rArr; _btod_etento &rArr; _btod_emul &rArr; btod_internal_mul &rArr; __ARM_common_ll_muluu
 </UL>
-<BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ll_udiv10
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_ediv
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emul
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_d2e
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
+<BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ll_udiv10
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_ediv
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emul
+<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_d2e
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec_real
 </UL>
@@ -1338,38 +1355,38 @@ Local Symbols
 <P><STRONG><a name="[29]"></a>_printf_input_char</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, _printf_char_common.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> _printf_char_common.o(.text)
 </UL>
-<P><STRONG><a name="[6b]"></a>_local_sscanf</STRONG> (Thumb, 70 bytes, Stack size 56 bytes, strtod.o(.text))
+<P><STRONG><a name="[6c]"></a>_local_sscanf</STRONG> (Thumb, 70 bytes, Stack size 56 bytes, strtod.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = _local_sscanf &rArr; _scanf_real
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_real
+<BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_real
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__strtod_int
+<BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__strtod_int
 </UL>
 
-<P><STRONG><a name="[70]"></a>btod_internal_mul</STRONG> (Thumb, 492 bytes, Stack size 56 bytes, btod.o(.text))
+<P><STRONG><a name="[71]"></a>btod_internal_mul</STRONG> (Thumb, 492 bytes, Stack size 56 bytes, btod.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = btod_internal_mul &rArr; __ARM_common_ll_muluu
 </UL>
-<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_ll_muluu
+<BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__ARM_common_ll_muluu
 </UL>
-<BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emuld
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emul
+<BR>[Called By]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emuld
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emul
 </UL>
 
-<P><STRONG><a name="[73]"></a>btod_internal_div</STRONG> (Thumb, 520 bytes, Stack size 64 bytes, btod.o(.text))
+<P><STRONG><a name="[74]"></a>btod_internal_div</STRONG> (Thumb, 520 bytes, Stack size 64 bytes, btod.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = btod_internal_div
 </UL>
-<BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_edivd
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_ediv
+<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_edivd
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_ediv
 </UL>
 
-<P><STRONG><a name="[79]"></a>_fp_value</STRONG> (Thumb, 602 bytes, Stack size 80 bytes, scanf_fp.o(.text))
+<P><STRONG><a name="[7a]"></a>_fp_value</STRONG> (Thumb, 602 bytes, Stack size 80 bytes, scanf_fp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 256<LI>Call Chain = _fp_value &rArr; _btod_etento &rArr; _btod_emul &rArr; btod_internal_mul &rArr; __ARM_common_ll_muluu
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_lmul
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_edivd
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emuld
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_errno_addr
+<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_lmul
+<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_edivd
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_emuld
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_btod_etento
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_errno_addr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_really_real
 </UL>
@@ -1377,19 +1394,19 @@ Local Symbols
 <H3>
 Undefined Global Symbols
 </H3>
-<P><STRONG><a name="[7f]"></a>_call_atexit_fns</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
-<BR><BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
+<P><STRONG><a name="[80]"></a>_call_atexit_fns</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
+<BR><BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 </UL>
 
-<P><STRONG><a name="[62]"></a>_printf_post_padding</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
+<P><STRONG><a name="[63]"></a>_printf_post_padding</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
 <BR><BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec_real
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_infnan
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_infnan
 </UL>
 
-<P><STRONG><a name="[61]"></a>_printf_pre_padding</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
+<P><STRONG><a name="[62]"></a>_printf_pre_padding</STRONG> (ARM, 0 bytes, Stack size 0 bytes, UNDEFINED)
 <BR><BR>[Called By]<UL><LI><a href="#[2e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_dec_real
-<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_infnan
+<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_fp_infnan
 </UL>
 <HR></body></html>
